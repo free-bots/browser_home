@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="github-container">
     <div v-if="error !== ''">an error occurred -___-</div>
     <div v-else>
       <div class="user-container">
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.github-container {
   font-size: 1.3em;
   border-radius: 30px;
   padding: 5%;
@@ -83,6 +83,7 @@ export default {
   max-height: 500px;
   min-width: 450px;
   min-height: 450px;
+  color: black;
 }
 .user-container {
   height: 20%;
