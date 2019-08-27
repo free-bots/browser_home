@@ -61,7 +61,7 @@ export default {
   vertical-align: inherit;
   width: 60%;
   height: 60%;
-  border-radius: 33%;
+  border-radius: 30px;
   background: white;
   margin: 5%;
   padding: 15%;

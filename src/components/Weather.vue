@@ -1,20 +1,22 @@
 <template>
-  <div id="weather">
-    <div id="current" v-if="error === ''">
-      <div id="localtion">
-        <span id="location">{{data.name}}</span>
+  <div class="weather">
+    <div class="current" v-if="error === ''">
+      <div class="column">
+        <span class="location">{{data.name}}</span>
+        <br />
+        <br />
+        <div class="temp">{{data.main.temp}} °C</div>
       </div>
-      <div id="temp">{{data.main.temp}} °C</div>
-      <div id="description">{{data.weather[0].description}}</div>
-      <div class="wind">
-        <div class="speed"></div>
+
+      <div class="column">
         <div class="icon">
           <img v-bind:src="img" alt />
         </div>
+        <div class="description">{{data.weather[0].description}}</div>
       </div>
     </div>
     <div v-else>can't load the weather -___-</div>
-    <div id="forcast">
+    <div class="forcast">
       <div v-for="item in forcast.list" v-bind:key="item.dt" class="flex-container">
         <div class="date">{{new Date(item.dt*1000).toLocaleDateString()}}</div>
         <div class="time">{{new Date(item.dt*1000).toLocaleTimeString()}}</div>
@@ -30,12 +32,6 @@
 
 <script>
 import axios from "axios";
-
-//icons
-//https://openweathermap.org/weather-conditions
-//https://erikflowers.github.io/weather-icons/
-
-//https://www.mikestreety.co.uk/blog/vue-js-using-localstorage-with-the-vuex-store
 
 export default {
   props: ["apiKey", "location", "interval"],
@@ -59,7 +55,6 @@ export default {
     },
     fetchWeather() {
       //grep the current weather
-      //axios.get('https://samples.openweathermap.org/data/2.5/weather?q=London&appid=b6907d289e10d714a6e88b30761fae22', {headers: {}})
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?q=${this.location}&units=metric&appid=${this.apiKey}`
@@ -74,6 +69,7 @@ export default {
           this.error = err;
         });
 
+      //grep the forcast
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/forecast?q=${this.location}&units=metric&appid=${this.apiKey}`
@@ -81,30 +77,41 @@ export default {
         .then(res => {
           const receive = res.data;
           this.forcast = receive;
-          //console.log(receive);
         })
         .catch(err => {
           this.error = err;
         });
-
-      //grep the forcast
     }
   }
 };
 </script>
 
 <style scoped>
-#weather {
+.weather {
   color: black;
   text-align: center;
-  border-radius: 5%;
+  border-radius: 30px;
   background: rgb(214, 210, 210);
   padding: 5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: 500px;
+  max-height: 500px;
+  min-width: 450px;
+  min-height: 450px;
 }
-#forcast {
+.current {
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  max-height: 140px;
+}
+.column {
+  flex: 50%;
+  padding: 5%;
+}
+.forcast {
   overflow: auto;
-  height: 30.5vh;
+  height: 300px;
 }
 .flex-container {
   display: flex;
