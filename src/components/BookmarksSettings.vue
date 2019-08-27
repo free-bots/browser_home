@@ -23,10 +23,7 @@
 <script>
 import BookmarkSettingsItem from "../components/BookmarkSettingsItem.vue";
 import draggable from "vuedraggable";
-import bookmarkslist from "../bookmarks.js";
 import { mapGetters, mapActions } from "vuex";
-import bookmarks from "../bookmarks.js";
-import { get } from "http";
 
 export default {
   props: [],
@@ -38,7 +35,6 @@ export default {
 
   methods: {
     updateName(e) {
-      console.log(e);
       this.bookmarks_name(e);
     },
     updateUrl(e) {

@@ -169,7 +169,6 @@ import TorCheck from "../components/TorCheck";
 import Github from "../components/Github.vue";
 import BookmarksSettings from "../components/BookmarksSettings.vue";
 import Bookmarks from "../components/Bookmarks.vue";
-import axios from "axios";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -244,8 +243,6 @@ export default {
 </script>
 
 <style scoped>
-.flex-container {
-}
 .row {
   display: flex;
   flex-wrap: wrap;
