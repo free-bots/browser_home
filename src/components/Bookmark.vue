@@ -21,6 +21,9 @@
 </template>
 
 <script>
+/**
+ * basic square for the bookmarks
+ */
 export default {
   name: "bookmark",
   props: ["name", "url", "img"],
@@ -63,8 +66,14 @@ export default {
   margin: 5%;
   padding: 15%;
   object-fit: cover;
+  max-width: 50px;
+  max-height: 50px;
 }
 #name {
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  overflow: hidden;
   color: blueviolet;
   text-align: center;
   font-size: 1em;
