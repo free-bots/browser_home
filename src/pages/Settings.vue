@@ -7,7 +7,9 @@
       <div class="row">
         <div class="column">
           <form action>
-            <label for="brackets">color for brackets</label>
+            <label for="brackets">Color for brackets</label>
+            <br />
+            <br />
             <input
               type="color"
               name
@@ -16,7 +18,10 @@
               @input="setClockBracketsColor"
             />
             <br />
-            <label for="clocktext">textclolor of the clock</label>
+            <br />
+            <label for="clocktext">Textcolor of the clock</label>
+            <br />
+            <br />
             <input
               type="color"
               name
@@ -25,7 +30,10 @@
               @input="setClockTextColor"
             />
             <br />
-            <label for="blink">show blinking dots</label>
+            <br />
+            <label for="blink">Show blinking dots</label>
+            <br />
+            <br />
             <input
               type="checkbox"
               name
@@ -52,6 +60,8 @@
         <div class="column">
           <form action>
             <label for="location">Location for the weather</label>
+            <br />
+            <br />
             <input
               type="text"
               name
@@ -60,7 +70,10 @@
               @input="setWeatherLocation"
             />
             <br />
-            <label for="weatherinterval">refresh time of the weather</label>
+            <br />
+            <label for="weatherinterval">Refresh time of the weather</label>
+            <br />
+            <br />
             <input
               type="text"
               name
@@ -69,7 +82,10 @@
               @input="setWeatherInterval"
             />
             <br />
-            <label for="weatherapikey">api key</label>
+            <br />
+            <label for="weatherapikey">Api key for openweathermap</label>
+            <br />
+            <br />
             <input name id="weatherapikey" :value="this.weather.apiKey" @input="setWeatherApiKey" />
           </form>
         </div>
@@ -89,7 +105,9 @@
       <div class="row">
         <div class="column">
           <form action>
-            <label for="torcheck">show tor</label>
+            <label for="torcheck">Show tor status</label>
+            <br />
+            <br />
             <input
               type="checkbox"
               name
@@ -109,7 +127,9 @@
       <div class="row">
         <div class="column">
           <form action>
-            <label for="github">github login</label>
+            <label for="github">GitHub login name</label>
+            <br />
+            <br />
             <input type="text" name id="github" :value="this.github.user" @input="setGitHubUser" />
             <br />
           </form>
@@ -127,6 +147,8 @@
         <div class="column">
           <form action>
             <label for="bookmarks">Bookmarks</label>
+            <br />
+            <br />
             <BookmarksSettings />
 
             <br />
@@ -255,6 +277,18 @@ export default {
 .home img {
   height: 35px;
   width: 35px;
+}
+form {
+  text-align: center;
+  font-size: 1.3em;
+  margin: 80px;
+}
+
+input {
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
 }
 @media only screen and (max-width: 1400px) {
   .column {

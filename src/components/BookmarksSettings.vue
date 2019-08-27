@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button @click.prevent="addEntry">add</button>
+    <button @click.prevent="addEntry" class="addbutton">Add a new bookmark</button>
+    <br />
+    <br />
     <draggable v-model="bookmarkWrapper">
       <div v-for="bookmark in bookmarkWrapper" v-bind:key="bookmark.id">
         <BookmarkSettingsItem
@@ -75,4 +77,13 @@ export default {
 </script>
 
 <style scoped>
+.addbutton {
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  background: rgb(11, 129, 94);
+}
 </style>
