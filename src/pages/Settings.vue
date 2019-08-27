@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <a href="/" class="home">
+    <router-link to="/" class="home">
       <img src="@/assets/home.png" alt />
-    </a>
+    </router-link>
     <div class="flex-container">
       <div class="row">
         <div class="column">

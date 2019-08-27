@@ -1,9 +1,9 @@
 <template>
   <div id="home">
     <div id="widget-container">
-      <a href="/settings" class="settings">
+      <router-link to="/settings" class="settings">
         <img src="@/assets/settings.png" alt />
-      </a>
+      </router-link>
       <div class="top">
         <Clock
           :showBlink="this.clock.blink"
@@ -46,9 +46,6 @@ import Weather from "../components/Weather.vue";
 import Bookmarks from "../components/Bookmarks.vue";
 import TorCheck from "../components/TorCheck.vue";
 import GitHub from "../components/Github.vue";
-import devbookmarks from "../bookmarks.js";
-
-import BookmarkModal from "../components/BookmarkModal.vue";
 
 import { mapGetters, mapActions } from "vuex";
 
