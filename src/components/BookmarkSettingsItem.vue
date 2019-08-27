@@ -40,7 +40,7 @@ export default {
     emitImg(e) {
       this.$emit("img", { id: this.id, value: e.target.value });
     },
-    emitDel(e) {
+    emitDel() {
       this.$emit("del", { id: this.id });
     }
   }
