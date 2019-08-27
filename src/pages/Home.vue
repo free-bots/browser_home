@@ -18,6 +18,7 @@
           <div v-for="widget in widgetPostion" v-bind:key="widget.id" class="column">
             <div v-if="widget.type==='weather'">
               <Weather
+                class="weather"
                 :location="weather.location"
                 :apiKey="weather.apiKey"
                 :interval="weather.interval"
@@ -27,7 +28,7 @@
               <Bookmarks id="bookmarks" :bookmarks="bookmarks.bookmarks" />
             </div>
             <div v-else-if="widget.type==='github'">
-              <GitHub :user="github.user" />
+              <GitHub :user="github.user" class="github" />
             </div>
             <div v-else></div>
           </div>
@@ -110,10 +111,11 @@ body {
   min-width: 100%;
 }
 .column {
-  flex: 29%;
-  max-width: 29%;
-  max-height: 29%;
-  padding: 2%;
+  flex: 25%;
+  min-width: 450px;
+  max-width: 500px;
+  max-height: 500px;
+  margin: 20px;
 }
 .top {
   padding-top: 10%;
@@ -124,15 +126,18 @@ body {
 *::-webkit-scrollbar {
   display: none;
 }
-
-@media only screen and (max-width: 1200px) {
+/* center the content */
+@media only screen and (max-width: 1600px) {
   #flex-container {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .column {
-    max-width: 96%;
-    max-height: 96%;
-    padding: 2%;
+    flex: 100%;
+    flex-wrap: wrap;
+    align-items: center;
   }
 }
 </style>
