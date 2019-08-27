@@ -61,11 +61,9 @@ export default {
   computed: {
     bookmarkWrapper: {
       get() {
-        console.log(this.$store.state.settings.bookmarks.bookmarks);
         return this.$store.state.settings.bookmarks.bookmarks;
       },
       set(value) {
-        console.log(value);
         //this.$store.commit();
         this.$store.commit("bookmarks_list", value);
       }
