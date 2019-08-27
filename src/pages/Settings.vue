@@ -1,17 +1,8 @@
 <template>
   <div class="container">
-    <!-- 
-      settings
-      backround
-      location
-      clock 
-      show tor
-      github token
-      bookmarks
-      auto reload
-      api key openweathermap
-    -->
-    <a href="/">home</a>
+    <a href="/" class="home">
+      <img src="@/assets/home.png" alt />
+    </a>
     <div class="flex-container">
       <div class="row">
         <div class="column">
@@ -84,11 +75,13 @@
         </div>
 
         <div class="column">
-          <Weather
-            :location="this.weather.location"
-            :apiKey="this.weather.apiKey"
-            :interval="this.weather.interval"
-          />
+          <div class="columnfix">
+            <Weather
+              :location="this.weather.location"
+              :apiKey="this.weather.apiKey"
+              :interval="this.weather.interval"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -122,7 +115,9 @@
           </form>
         </div>
         <div class="column">
-          <Github :user="this.github.user" />
+          <div class="columnfix">
+            <Github :user="this.github.user" />
+          </div>
         </div>
       </div>
     </div>
@@ -237,10 +232,37 @@ export default {
 }
 .column {
   flex: 50%;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 450px;
+  min-width: 50%;
 }
 .container {
   background-image: linear-gradient(to right, #360033, #0b8793);
-  height: 100vh;
+  height: 100%;
   color: white;
+}
+.columnfix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home {
+  position: absolute;
+  left: 5px;
+  margin: 5px;
+}
+.home img {
+  height: 35px;
+  width: 35px;
+}
+@media only screen and (max-width: 1400px) {
+  .column {
+    flex: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 450px;
+    min-width: 100%;
+  }
 }
 </style>
