@@ -1,7 +1,9 @@
 <template>
   <div id="home">
     <div id="widget-container">
-      <a href="/settings">Settings</a>
+      <a href="/settings" class="settings">
+        <img src="@/assets/settings.png" alt />
+      </a>
       <div class="top">
         <Clock
           :showBlink="this.clock.blink"
@@ -126,6 +128,16 @@ body {
 *::-webkit-scrollbar {
   display: none;
 }
+.settings {
+  position: absolute;
+  right: 5px;
+  margin: 5px;
+}
+.settings img {
+  height: 35px;
+  width: 35px;
+}
+
 /* center the content */
 @media only screen and (max-width: 1600px) {
   #flex-container {
