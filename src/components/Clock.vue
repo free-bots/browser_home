@@ -25,12 +25,9 @@ export default {
       let t = new Date().toLocaleTimeString();
       if (this.showBlink) {
         if (this.showDot) {
-          console.log(this.showBlink);
-          console.log(this.showDot);
           t = t.replace(/:/g, " ");
         }
         this.showDot = !this.showDot;
-        console.log(this.showDot);
       }
       this.time = t;
     }, 999);

@@ -39,7 +39,13 @@ export default {
   data() {
     return {
       // the openweathermap json
-      data: {},
+      data: {
+        name: "",
+        main: {
+          temp: ""
+        },
+        weather: [{ description: "" }]
+      },
       forcast: {},
       img: "",
       error: ""

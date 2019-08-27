@@ -53,7 +53,6 @@ export default {
             html_url: element.html_url
           });
         });
-        console.log(receive);
       })
       .catch(err => {
         this.error = err;
@@ -62,7 +61,6 @@ export default {
       .get(`https://api.github.com/users/${this.user}`)
       .then(res => {
         const receive = res.data;
-        console.log(receive);
         this.login = receive.login;
         this.avatar_url = receive.avatar_url;
         this.html_url = receive.html_url;

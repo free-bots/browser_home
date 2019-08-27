@@ -20,8 +20,6 @@
 <script>
 import Bookmark from "./Bookmark.vue";
 import BookmarkModal from "./BookmarkModal.vue";
-import bookmarks from "../bookmarks";
-import { truncate } from "fs";
 
 import draggable from "vuedraggable";
 
@@ -40,13 +38,10 @@ export default {
   },
   methods: {
     showModalf() {
-      console.log("a");
       //this.showModal = true;
     },
     apply(e) {
       this.showModal = false;
-      console.log(e);
-
       // add a new Bookmark
       this.bookmarks.push(e);
     }
@@ -54,11 +49,9 @@ export default {
   computed: {
     bookmarkWrapper: {
       get() {
-        console.log(this.$store.state.settings.bookmarks.bookmarks);
         return this.$store.state.settings.bookmarks.bookmarks;
       },
       set(value) {
-        console.log(value);
         //this.$store.commit();
         this.$store.commit("bookmarks_list", value);
       }
